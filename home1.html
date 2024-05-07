@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="./sass/vender/bootstrap.css">
+    <link rel="shortcut icon" type="x-icon" href="images\instaicon.png">
+    <link rel="stylesheet" href="./sass/vender/bootstrap.min.css">
+    <link rel="stylesheet" href="./owlcarousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.css">
+    <link rel="stylesheet" href="./sass/main.css">
+    <style>
+        .wrapper{
+            width: 500px;
+            height: 250px;
+            margin: 1500px;
+            outline: solid 1px black;
+        }
+        .post{
+            width: 100%;
+            height: auto;
+            background: #fff;
+            border: 1px solid #dfdfdf;
+            margin-top: 40px;
+        }
+        
+        .info{
+            width: 100%;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .info .username{
+            width: auto;
+            font-weight: bold;
+            color: #000;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        
+        .info .options{
+            height: 10px;
+            cursor: pointer;
+        }
+        
+        .info .user{
+            display: flex;
+            align-items: center;
+        }
+        
+        .info .profile-pic{
+            height: 40px;
+            width: 40px;
+            padding: 0;
+            background: none;
+        }
+        
+        .info .profile-pic img{
+            border: none;
+        }
+        
+        .post-image{
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+        
+        .post-content{
+            width: 100%;
+            padding: 20px;
+        }
+        
+        .likes{
+            font-weight: bold;
+        }
+        
+        .description{
+            margin: 10px 0;
+            font-size: 14px;
+            line-height: 20px;
+        }
+        
+        .description span{
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .post-time{
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 12px;
+        }
+        
+        .comment-wrapper{
+            width: 100%;
+            height: 50px;
+            border-radius: 1px solid #dfdfdf;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .comment-wrapper .icon{
+            height: 30px;
+        }
+        
+        .comment-box{
+            width: 80%;
+            height: 100%;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+        
+        .comment-btn,
+        .action-btn{
+            width: 70px;
+            height: 100%;
+            background: none;
+            border: none;
+            outline: none;
+            text-transform: capitalize;
+            font-size: 16px;
+            color: rgb(0, 162, 255);
+            opacity: 0.5;
+        }
+        
+        .reaction-wrapper{
+            width: 100%;
+            height: 50px;
+            display: flex;
+            margin-top: -20px;
+            align-items: center;
+        }
+        
+        .reaction-wrapper .icon{
+            height: 25px;
+            margin: 0;
+            margin-right: 20px;
+        }
+        
+        .reaction-wrapper .icon.save{
+            margin-left: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="post_page">
+        <!--***** nav menu start ****** -->
+        <div class="nav_menu">
+            <div class="fix_top">
+                <!-- nav for big->medium screen -->
+                <div class="nav">
+                    <div class="logo">
+                        <a href="./home.html">
+                            <img class="d-block d-lg-none small-logo" src="./images/instagram.png" alt="logo">
+                            <img class="d-none d-lg-block" src="./images/logo_menu.png" alt="logo">
+                        </a>
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <li>
+                                <a class="active" href="home.html">
+                                    <img src="./images/accueil.png">
+                                    <span class="d-none d-lg-block ">Home</span>
+                                </a>
+                            </li>
+                            <li id="search_icon">
+                                <a href="#">
+                                    <img src="./images/search.png">
+                                    <span class="d-none d-lg-block search">Search </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./explore.html">
+                                    <img src="./images/compass.png">
+                                    <span class="d-none d-lg-block ">Explore</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./reels.html">
+                                    <img src="./images/video.png">
+                                    <span class="d-none d-lg-block ">Reels</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./messages.html">
+                                    <img src="./images/send.png">
+                                    <span class="d-none d-lg-block ">Messages</span>
+                                </a>
+                            </li>
+                            <li class="notification_icon">
+                                <a href="#">
+                                    <img src="./images/love.png">
+                                    <span class="d-none d-lg-block ">Notifications</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#create_modal">
+                                    <img src="./images/tab.png">
+                                    <span class="d-none d-lg-block ">Create</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a href="./profile.html">
+                                    <img class="circle story" src="./images/profile_img.jpg">
+                                    <span class="d-none d-lg-block ">Profile</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="more">
+                        <div class="btn-group dropup">
+                            <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <img src="./images/menu.png">
+                                <span class="d-none d-lg-block ">More</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">
+                                        <span>Settings</span>
+                                        <img src="./images/reglage.png">
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#">
+                                        <span>Your activity</span>
+                                        <img src="./images/history.png">
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#">
+                                        <span>Saved</span>
+                                        <img src="./images/save-instagram.png">
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#">
+                                        <span>Switch apperance</span>
+                                        <img src="./images/moon.png">
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#">
+                                        <span>Report a problem</span>
+                                        <img src="./images/problem.png">
+                                    </a></li>
+                                <li><a class="dropdown-item bold_border" href="#">
+                                        <span>Switch accounts</span>
+                                    </a></li>
+                                <li><a class="dropdown-item" href="./login.html">
+                                        <span>Log out</span>
+                                    </a></li>
+                            </ul>
+                        </div>
+                        <!--  -->
+
+                    </div>
+                </div>
+
+                section class="main">
+    <div class="wrapper">
+        <div class="left-col">
+            // status wrappers
+
+            <div class="post">
+                <div class="info">
+                    <div class="user">
+                        <div class="profile-pic"><img src="img/cover 1.png" alt=""></div>
+                        <p class="username">modern_web_channel</p>
+                    </div>
+                    <img src="img/option.PNG" class="options" alt="">
+                </div>
+                <img src="img/cover 1.png" class="post-image" alt="">
+                <div class="post-content">
+                    <div class="reaction-wrapper">
+                        <img src="img/like.PNG" class="icon" alt="">
+                        <img src="img/comment.PNG" class="icon" alt="">
+                        <img src="img/send.PNG" class="icon" alt="">
+                        <img src="img/save.PNG" class="save icon" alt="">
+                    </div>
+                    <p class="likes">1,012 likes</p>
+                    <p class="description"><span>username </span> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur tenetur veritatis placeat, molestiae impedit aut provident eum quo natus molestias?</p>
+                    <p class="post-time">2 minutes ago</p>
+                </div>
+                <div class="comment-wrapper">
+                    <img src="img/smile.PNG" class="icon" alt="">
+                    <input type="text" class="comment-box" placeholder="Add a comment">
+                    <button class="comment-btn">post</button>
+                </div>
+            </div>
+            <div class="post">
+                <div class="info">
+                    <div class="user">
+                        <div class="profile-pic"><img src="img/cover 2.png" alt=""></div>
+                        <p class="username">modern_web_channel</p>
+                    </div>
+                    <img src="img/option.PNG" class="options" alt="">
+                </div>
+                <img src="img/cover 2.png" class="post-image" alt="">
+                <div class="post-content">
+                    <div class="reaction-wrapper">
+                        <img src="img/like.PNG" class="icon" alt="">
+                        <img src="img/comment.PNG" class="icon" alt="">
+                        <img src="img/send.PNG" class="icon" alt="">
+                        <img src="img/save.PNG" class="save icon" alt="">
+                    </div>
+                    <p class="likes">1,012 likes</p>
+                    <p class="description"><span>username </span> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur tenetur veritatis placeat, molestiae impedit aut provident eum quo natus molestias?</p>
+                    <p class="post-time">2 minutes ago</p>
+                </div>
+                <div class="comment-wrapper">
+                    <img src="img/smile.PNG" class="icon" alt="">
+                    <input type="text" class="comment-box" placeholder="Add a comment">
+                    <button class="comment-btn">post</button>
+                </div>
+            </div>
+            // +5 more post elements
+    <div class="post">
+        <div class="user-info">
+            <img src="user_image.php" alt="User Image">
+            <span><?php echo $_SESSION['username']; ?></span>
+        </div>
+        <div class="post-content">
+            <img src="uploads/<?php echo $file_name; ?>" alt="Uploaded Image">
+            <!-- You can also add other content of the post here if needed -->
+        </div>
+    </div>
+
+        </div>
+    </div>
+</section>
